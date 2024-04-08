@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  quoters:
+    image: javajon/quoters:1.0.0
+    ports:
+      - "8081:8080"
+
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - quoters
