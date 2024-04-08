@@ -13,5 +13,7 @@ The codebase consists of the following main components
 ## How to run
 - clone the repositry
 '''
+git clone https://github.com/Joachim-Chuah/Calling-a-RESTful-service.git
+'''
 
 
