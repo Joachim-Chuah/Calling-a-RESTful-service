@@ -11,5 +11,7 @@ The codebase consists of the following main components
 - 'docker-compose.yml': Configuration file to orchestrate the Quoters service and client application containers.
 
 ## How to run
+- clone the repositry
+'''
 
 
