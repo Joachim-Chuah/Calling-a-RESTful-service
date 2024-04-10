@@ -1,0 +1,29 @@
+name: RESTful Service CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+      
+    - name: Build and Run With Docker Compose
+      run: docker-compose up --build -d
+
+    - name: Wait for the Application to Initialize
+      run: sleep 30  # Adjust based on the required startup time
+
+    - name: Fetch Logs of the Client Application
+      run: docker-compose logs client
+
+    - name: Clean up
+      run: docker-compose down
